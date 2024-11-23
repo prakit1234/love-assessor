@@ -1,11 +1,11 @@
 <script lang="ts">
-  import Heart from "../components/Heart.svelte";
+  import { scale } from "svelte/transition"; 
+  import Heart from "../components/+page.svelte";
 
   let name1: string = "";
   let name2: string = "";
   let percentage: number = 0;
-  let message: string = ""; // To display the custom message
-
+  let message: string = ""; 
   const predefinedPairs: Record<string, number> = {
     "PD|VD": 100,
     "Hidanshu|Hidanshu's Princess": 100,
@@ -24,12 +24,12 @@
       percentage = Math.floor(Math.random() * 101);
     }
 
-    // Custom message for 100% matches
+ 
     if (percentage === 100) {
       message =
         "OMG! 100%? Your love is one in a million! Wishing you a lifetime of happiness and love. 💖";
     } else {
-      message = ""; // Clear the message for other percentages
+      message = ""; 
     }
   }
 </script>
@@ -44,12 +44,12 @@
   <Heart percentage={percentage} />
   <p class="percentage">{percentage}%</p>
   {#if message}
-    <p class="message" in:scale>{message}</p>
+    <p class="message" in:scale>{{ message }}</p> 
   {/if}
 </div>
 
 <style>
-  /* Container Styling */
+  
   .container {
     text-align: center;
     display: flex;
@@ -62,7 +62,7 @@
     animation: fadeIn 1.5s ease-in-out;
   }
 
-  /* Header Styling */
+  
   h1 {
     font-size: 3rem;
     background: linear-gradient(to right, #ff758c, #ff7eb3);
@@ -73,7 +73,7 @@
     animation: pop 1s ease-out;
   }
 
-  /* Input and Button Styling */
+ 
   .form {
     margin-bottom: 2rem;
   }
@@ -109,7 +109,7 @@
     transform: scale(1.1);
   }
 
-  /* Percentage Styling */
+  
   .percentage {
     font-size: 2.5rem;
     color: #ff758c;
@@ -117,7 +117,7 @@
     animation: pop 0.6s ease-out;
   }
 
-  /* Message Styling */
+  
   .message {
     margin-top: 1.5rem;
     font-size: 1.5rem;
@@ -128,7 +128,7 @@
     animation: pop 0.8s ease-out;
   }
 
-  /* Animations */
+  
   @keyframes pop {
     0% {
       transform: scale(0);
