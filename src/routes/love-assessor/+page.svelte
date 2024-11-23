@@ -8,9 +8,7 @@
   let message: string = ""; 
 
   const predefinedPairs: Record<string, number> = {
-    "PD|VD": 100,
     "Hidanshu|Hidanshu's Princess": 100,
-    "PD|Gay": 100,
   };
 
   function calculateLove() {
