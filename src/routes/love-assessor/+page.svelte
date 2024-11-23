@@ -6,6 +6,7 @@
   let name2: string = "";
   let percentage: number = 0;
   let message: string = ""; 
+
   const predefinedPairs: Record<string, number> = {
     "PD|VD": 100,
     "Hidanshu|Hidanshu's Princess": 100,
@@ -24,7 +25,7 @@
       percentage = Math.floor(Math.random() * 101);
     }
 
- 
+   
     if (percentage === 100) {
       message =
         "OMG! 100%? Your love is one in a million! Wishing you a lifetime of happiness and love. 💖";
@@ -44,7 +45,7 @@
   <Heart percentage={percentage} />
   <p class="percentage">{percentage}%</p>
   {#if message}
-    <p class="message" in:scale>{{ message }}</p> 
+    <p class="message" in:scale>{message}</p> 
   {/if}
 </div>
 
