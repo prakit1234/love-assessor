@@ -9,8 +9,9 @@
 
   const predefinedPairs: Record<string, number> = {
     "PD|7 years old girls": 100,
-    "Hidanshu|Hidanshu's Princess": 100,
+    "Hidanshu|Ayesha": 100,
     "PD|Gay": 100,
+     "Hidanshu|Andrew Tate": 100,
   };
 
   function calculateLove() {
